@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  main:
+    image: try-capybara
+    build: .
+    volumes:
+      - .:/src
+    depends_on:
+      - selenium
+
+  selenium:
+    image: selenium/standalone-chrome-debug
